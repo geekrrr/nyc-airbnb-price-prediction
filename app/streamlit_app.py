@@ -3,7 +3,10 @@ import os
 import pandas as pd
 import numpy as np
 import joblib
-
+import sys, os
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if ROOT_DIR not in sys.path:
+    sys.path.append(ROOT_DIR)
 from src.data_prep import load_listings, quick_clean, find_listings_path
 
 MODEL_PATH = "models/rf_model.joblib"
