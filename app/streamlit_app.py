@@ -425,7 +425,9 @@ with tab1:
         
         # Row 2: Top Neighborhoods
         st.markdown("#### Top 10 Neighborhoods by Median Price")
-        top_neighborhoods = dfc.groupby('neighbourhood')['price'].median().sort_values(ascending=False).head(10).reset_index()
+        # Filter out NaN neighbourhoods
+        valid_neighborhoods = dfc[dfc['neighbourhood'].notna() & (dfc['neighbourhood'] != 'nan')]
+        top_neighborhoods = valid_neighborhoods.groupby('neighbourhood')['price'].median().sort_values(ascending=False).head(10).reset_index()
         top_neighborhoods.columns = ['Neighbourhood', 'Median Price']
         
         fig_neigh = px.bar(
