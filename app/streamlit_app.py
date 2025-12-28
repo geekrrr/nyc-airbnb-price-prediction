@@ -424,7 +424,7 @@ with tab1:
             st.plotly_chart(fig_room, key="room_chart")
         
         # Row 2: Top Neighborhoods
-        st.markdown("#### 🏆 Top 10 Neighborhoods by Median Price")
+        st.markdown("#### Top 10 Neighborhoods by Median Price")
         top_neighborhoods = dfc.groupby('neighbourhood')['price'].median().sort_values(ascending=False).head(10).reset_index()
         top_neighborhoods.columns = ['Neighbourhood', 'Median Price']
         
@@ -452,7 +452,7 @@ with tab1:
         # Row 3: Availability vs Price scatter
         col1, col2 = st.columns(2)
         with col1:
-            st.markdown("#### 📅 Availability vs Price")
+            st.markdown("#### Availability vs Price")
             sample_df = dfc.sample(min(1000, len(dfc)), random_state=42)
             fig_scatter = px.scatter(
                 sample_df,
@@ -504,7 +504,7 @@ with tab2:
     col_map, col_form = st.columns([1, 1])
     
     with col_map:
-        st.markdown("#### 📍 Select Location")
+        st.markdown("#### Select Location")
         import folium
         from streamlit_folium import st_folium
         
@@ -529,18 +529,18 @@ with tab2:
         # Coordinate display
         st.markdown(f"""
         <div class="coord-box">
-            <strong>📍 Latitude:</strong> {st.session_state.selected_lat:.4f} &nbsp;|&nbsp; 
+            <strong> Latitude:</strong> {st.session_state.selected_lat:.4f} &nbsp;|&nbsp; 
             <strong>Longitude:</strong> {st.session_state.selected_lon:.4f}
         </div>
         """, unsafe_allow_html=True)
     
     with col_form:
-        st.markdown("#### 📝 Listing Details")
+        st.markdown("#### Listing Details")
         
         # Get unique neighborhoods for dropdown
         if not df.empty and 'neighbourhood' in df.columns:
             neighborhoods = sorted(df['neighbourhood'].dropna().unique().tolist())
-            neighbourhood = st.selectbox("🏘️ Neighbourhood", options=neighborhoods)
+            neighbourhood = st.selectbox("Neighbourhood", options=neighborhoods)
         else:
             neighbourhood = st.text_input("Neighbourhood", value="Manhattan")
         
@@ -556,7 +556,7 @@ with tab2:
         
         calculated_host_listings_count = st.number_input("Host Listings", value=1, min_value=1)
         
-        predict_btn = st.button("🔮 Predict Price", key="predict_single")
+        predict_btn = st.button("Predict Price", key="predict_single")
     
     if predict_btn:
         row = pd.DataFrame([{
