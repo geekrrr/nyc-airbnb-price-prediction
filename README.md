@@ -1,6 +1,10 @@
 #  NYC Airbnb Price Analysis and Prediction
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://nyc-airbnb-price-prediction.streamlit.app/)
+
 Exploratory Data Analysis (EDA) and machine learning on New York City Airbnb listings to understand pricing drivers and predict nightly prices.
+
+**🚀 [Try the Live App](https://nyc-airbnb-price-prediction.streamlit.app/)**
 
 ---
 
