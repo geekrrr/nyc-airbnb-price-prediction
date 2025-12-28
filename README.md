@@ -156,11 +156,11 @@ Random Forest feature importance indicates that:
 - A tree‑based model (Random Forest) offers substantially better predictive accuracy than a naive baseline or simple linear model.
 ---
 
-## 📥 Dataset Download (Required)
+##  Dataset Download (Required)
 
 This project uses publicly available Airbnb data from **Kaggle**.
 
-👉 **Download the NYC dataset from here:**  
+**Download the NYC dataset from here:**  
 https://www.kaggle.com/datasets/arthbr11/new-york-city-airbnb-open-data
 
 Download the following files for **New York City**:
